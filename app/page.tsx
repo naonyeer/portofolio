@@ -369,7 +369,10 @@ export default function Home() {
           className="mt-6 scroll-mt-28"
           barColor="bg-gradient-to-r from-lime-700 to-green-500"
         >
-          <div className="grid gap-4 bg-gradient-to-br from-lime-200 via-cyan-200 to-blue-400 p-3 md:grid-cols-3" id="projects">
+          <div
+            className="grid scroll-mt-36 gap-4 bg-gradient-to-br from-lime-200 via-cyan-200 to-blue-400 p-3 md:grid-cols-3"
+            id="projects"
+          >
             {projects.map((project) => (
               <article
                 className={`pixel-border group flex min-h-[280px] flex-col border-2 border-black bg-gradient-to-br ${project.color} p-4 text-white transition hover:-translate-y-1 hover:rotate-[-1deg]`}
@@ -405,7 +408,7 @@ export default function Home() {
           </div>
         </Window>
 
-        <section className="mt-6 grid gap-5 lg:grid-cols-[.85fr_1.15fr]" id="skills">
+        <section className="mt-6 grid scroll-mt-36 gap-5 lg:grid-cols-[.85fr_1.15fr]" id="skills">
           <Window title="system_info.sys" barColor="bg-gradient-to-r from-cyan-700 to-blue-700">
             <div className="window-shine p-6 text-white">
               <h2 className="font-display text-4xl uppercase text-acid drop-shadow-[3px_3px_0_#000]">
@@ -428,7 +431,7 @@ export default function Home() {
           </Window>
 
           <Window title="my_process" className="scroll-mt-28" barColor="bg-gradient-to-r from-yellow-600 to-purple-700">
-            <div className="grid gap-4 bg-night p-4 text-white md:grid-cols-2" id="process">
+            <div className="grid scroll-mt-36 gap-4 bg-night p-4 text-white md:grid-cols-2" id="process">
               {process.map((item) => (
                 <article className="border-2 border-cyan-200 bg-white/10 p-4 shadow-[5px_5px_0_#000]" key={item.step}>
                   <div className="mb-4 flex items-center justify-between">
@@ -445,7 +448,7 @@ export default function Home() {
           </Window>
         </section>
 
-        <section className="mt-6 grid gap-5 lg:grid-cols-[1fr_.8fr]" id="contact">
+        <section className="mt-6 grid scroll-mt-36 gap-5 lg:grid-cols-[1fr_.8fr]" id="contact">
           <Window title="guestbook_contact.alert" barColor="bg-gradient-to-r from-fuchsia-700 to-yellow-500">
             <div className="bg-gradient-to-br from-fuchsia-950 via-purple-950 to-blue-950 p-7 text-white">
               <Sticker className="mb-5">status: open for ideas</Sticker>
