@@ -1,4 +1,5 @@
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
+import HackerMusicPlayer from "./hacker-music-player";
 
 const navItems = [
   { label: "home", href: "#home" },
@@ -169,7 +170,7 @@ export default function Home() {
           ))}
           <div className="mt-auto mb-24 w-full border-2 border-cyan-300 bg-night p-2 text-left font-pixel text-xs">
             <p className="mb-2 bg-electric px-1 font-bold">Now Playing</p>
-            <p className="text-plasma">&gt; vibe.exe</p>
+            <p className="text-plasma">&gt; haunted_hacker.wav</p>
             <div className="mt-3 flex justify-between">
               <span>◀</span>
               <span>▮▮</span>
@@ -462,7 +463,7 @@ export default function Home() {
               <div className="mt-7 flex flex-wrap gap-4">
                 <a
                   className="border-2 border-black bg-acid px-6 py-3 font-display uppercase text-night shadow-hard-black transition hover:-translate-y-1"
-                  href="mailto:hello@zee.build"
+                  href="mailto:naonyeer@gmail.com"
                 >
                   email zee ✉
                 </a>
@@ -491,6 +492,7 @@ export default function Home() {
           </div>
         </footer>
       </div>
+      <HackerMusicPlayer />
     </main>
   );
 }
