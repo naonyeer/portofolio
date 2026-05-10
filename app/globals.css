@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --grid: rgba(86, 231, 255, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(255, 77, 248, 0.34), transparent 24rem),
+    radial-gradient(circle at 82% 18%, rgba(201, 255, 50, 0.16), transparent 20rem),
+    radial-gradient(circle at 55% 80%, rgba(38, 103, 255, 0.34), transparent 28rem),
+    linear-gradient(135deg, #02010d 0%, #06033a 43%, #01020f 100%);
+  color: #fff8df;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 82%);
+}
+
+body::after {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.05) 0,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    radial-gradient(circle, transparent 54%, rgba(0, 0, 0, 0.36));
+  mix-blend-mode: soft-light;
+}
+
+::selection {
+  background: #c9ff32;
+  color: #02010d;
+}
+
+.chrome-text {
+  color: #fefefe;
+  -webkit-text-stroke: 2px #140038;
+  text-shadow:
+    0 3px 0 #7a8dff,
+    0 6px 0 #ff4df8,
+    0 10px 0 #04020b,
+    0 0 22px rgba(255, 255, 255, 0.78);
+}
+
+.pixel-border {
+  box-shadow:
+    inset 2px 2px 0 rgba(255, 255, 255, 0.72),
+    inset -2px -2px 0 rgba(0, 0, 0, 0.7),
+    6px 6px 0 rgba(0, 0, 0, 0.6);
+}
+
+.window-shine {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.13), transparent 36%),
+    linear-gradient(180deg, rgba(5, 7, 48, 0.98), rgba(5, 0, 24, 0.94));
+}
+
+.halftone {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.17) 1px, transparent 1px);
+  background-size: 9px 9px;
+}
+
+.checker {
+  background-color: #22106d;
+  background-image:
+    linear-gradient(45deg, rgba(255, 255, 255, 0.11) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.11) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.11) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.11) 75%);
+  background-position:
+    0 0,
+    0 8px,
+    8px -8px,
+    -8px 0;
+  background-size: 16px 16px;
+}
+
+.marquee {
+  animation: marquee 18s linear infinite;
+}
+
+.floaty {
+  animation: floaty 5s ease-in-out infinite;
+}
+
+.blink {
+  animation: blink 1s steps(2, jump-none) infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.25;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .marquee,
+  .floaty,
+  .blink {
+    animation: none;
+  }
+}
