@@ -116,22 +116,27 @@ export default function HackerMusicPlayer() {
   useEffect(() => stopTrack, []);
 
   return (
-    <div className="fixed bottom-4 right-4 z-40 w-[min(21rem,calc(100vw-2rem))] border-2 border-cyan-200 bg-night font-pixel text-xs text-cyan-100 shadow-neon">
-      <div className="flex items-center justify-between border-b-2 border-cyan-200 bg-gradient-to-r from-black via-blue-950 to-plasma px-2 py-1 text-white">
-        <span>hacker_audio.sys</span>
-        <span className="blink text-acid">●</span>
+    <div className="w-full border-2 border-cyan-300 bg-[#090036] p-1 font-pixel text-[11px] text-white shadow-[3px_3px_0_#000]">
+      <div className="mb-2 bg-gradient-to-r from-[#2df3ff] via-[#2256ff] to-[#5024ff] px-2 py-1 font-bold leading-tight">
+        <span className="block">Now</span>
+        <span className="block">Playing</span>
       </div>
-      <div className="space-y-3 p-3">
-        <div>
-          <p className="text-plasma">&gt; haunted_hacker.wav</p>
-          <p className="mt-1 text-cyan-200">dark drone + glitch beeps</p>
-        </div>
+      <p className="text-plasma">&gt;</p>
+      <p className="break-all leading-4 text-plasma">haunted_hacker.wav</p>
+      <div className="mt-3 flex items-center justify-between text-lg text-white">
+        <button aria-label="previous track" className="px-1" type="button">
+          ◀
+        </button>
         <button
-          className="w-full border-2 border-black bg-acid px-3 py-2 font-display text-sm uppercase text-night shadow-[3px_3px_0_#000] transition hover:-translate-y-0.5 hover:bg-yellow-300"
+          aria-label={isPlaying ? "pause scary background music" : "play scary background music"}
+          className="px-1 text-xl leading-none text-white transition hover:text-acid"
           onClick={isPlaying ? stopTrack : playTrack}
           type="button"
         >
-          {isPlaying ? "pause scary bgm ▮▮" : "play scary bgm ▶"}
+          {isPlaying ? "▮▮" : "▶"}
+        </button>
+        <button aria-label="next track" className="px-1" type="button">
+          ▶
         </button>
       </div>
     </div>
